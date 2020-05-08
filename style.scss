@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin felxCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-image: linear-gradient(120deg, rgb(64, 214, 64), rgb(6, 95, 6));
+  @include felxCenter();
+  min-height: 100vh;
+}
+
+.container {
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  height: 60rem;
+  width: 40rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding-bottom: 2rem;
+
+  [class*="icon"] {
+    pointer-events: none;
+  }
+}
+
+.header {
+  height: 15rem;
+  width: 100%;
+  @include felxCenter();
+  flex-direction: column;
+
+  h1 {
+    color: white;
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    text-align: center;
+    display: block;
+    color: white;
+    font-size: 3rem;
+    width: 100%;
+    font-weight: 300;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.todo {
+  //   border: 1px solid red;
+  height: 7rem;
+  text-align: center;
+  @include felxCenter();
+  border-bottom: 2px rgba(255, 255, 255, 0.705) solid;
+  padding-bottom: 2rem;
+  transition: all 0.5s;
+
+  &__input {
+    width: 85%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 4px;
+    font-size: 2rem;
+    padding: 0 1rem;
+
+    &::placeholder {
+      font-size: 2rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .add-btn {
+    width: 10%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-left: -3.7rem;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .add-icon {
+      font-size: 2rem;
+      color: green;
+    }
+  }
+}
+
+.todo-container {
+  margin-top: 2rem;
+  height: 50%;
+  overflow-y: scroll;
+  transition: all 0.5s linear;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: black;
+  }
+}
+
+.todo-list {
+  list-style: none;
+  font-size: 2.2rem;
+  color: black;
+  text-align: center;
+  transition: all 0.5s linear;
+}
+
+.todos {
+  margin: auto;
+  border-radius: 4px;
+  width: 90%;
+  @include felxCenter();
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.658);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  transition: all 0.5s linear;
+
+  //   padding: 1rem;
+
+  li {
+    text-transform: capitalize;
+    flex: 1;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .check-btn,
+  .trash-btn {
+    height: 100%;
+    width: 3.5rem;
+    padding: 1rem 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .check-btn {
+    margin-right: 2px;
+    color: black;
+
+    .check-icon {
+      font-size: 1.8rem;
+    }
+  }
+
+  .trash-btn {
+    color: red;
+
+    &:hover {
+      background-color: red;
+      color: white;
+    }
+
+    .trash-icon {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.filter {
+  @include felxCenter();
+  height: 5rem;
+
+  .select {
+    height: 3rem;
+    width: 15rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+
+    &::after {
+      content: "\25BC";
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.7);
+      pointer-events: none;
+      transition: all 0.4s;
+    }
+  }
+
+  select {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 100%;
+    width: 100%;
+    padding: 0 1rem;
+    cursor: pointer;
+  }
+
+  .select:hover::after {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.done {
+  text-decoration: line-through;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s;
+
+  //   [class*="btn"] {
+  //     opacity: 1;
+  //   }
+
+  .check-btn {
+    color: rgb(7, 182, 7);
+  }
+}
+
+.remove {
+  animation: remove 1s ease;
+  transition: all 0.5s linear;
+}
+
+@keyframes remove {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(-10%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

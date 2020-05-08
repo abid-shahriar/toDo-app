@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-image: linear-gradient(120deg, #40d640, #065f06);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  height: 60rem;
+  width: 40rem;
+  -webkit-box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding-bottom: 2rem;
+}
+
+.container [class*="icon"] {
+  pointer-events: none;
+}
+
+.header {
+  height: 15rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header h1 {
+  color: white;
+  font-size: 5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.header h3 {
+  text-align: center;
+  display: block;
+  color: white;
+  font-size: 3rem;
+  width: 100%;
+  font-weight: 300;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.todo {
+  height: 7rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 2px rgba(255, 255, 255, 0.705) solid;
+  padding-bottom: 2rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.todo__input {
+  width: 85%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 4px;
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+.todo__input::-webkit-input-placeholder {
+  font-size: 2rem;
+}
+
+.todo__input:-ms-input-placeholder {
+  font-size: 2rem;
+}
+
+.todo__input::-ms-input-placeholder {
+  font-size: 2rem;
+}
+
+.todo__input::placeholder {
+  font-size: 2rem;
+}
+
+.todo__input:focus {
+  outline: none;
+}
+
+.todo .add-btn {
+  width: 10%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-left: -3.7rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.todo .add-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.todo .add-btn .add-icon {
+  font-size: 2rem;
+  color: green;
+}
+
+.todo-container {
+  margin-top: 2rem;
+  height: 50%;
+  overflow-y: scroll;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.todo-container::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-container::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+.todo-list {
+  list-style: none;
+  font-size: 2.2rem;
+  color: black;
+  text-align: center;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.todos {
+  margin: auto;
+  border-radius: 4px;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.658);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.todos li {
+  text-transform: capitalize;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.todos .check-btn,
+.todos .trash-btn {
+  height: 100%;
+  width: 3.5rem;
+  padding: 1rem 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.todos .check-btn {
+  margin-right: 2px;
+  color: black;
+}
+
+.todos .check-btn .check-icon {
+  font-size: 1.8rem;
+}
+
+.todos .trash-btn {
+  color: red;
+}
+
+.todos .trash-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.todos .trash-btn .trash-icon {
+  font-size: 1.8rem;
+}
+
+.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 5rem;
+}
+
+.filter .select {
+  height: 3rem;
+  width: 15rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 3px;
+}
+
+.filter .select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.filter select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 100%;
+  width: 100%;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.filter .select:hover::after {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.done {
+  text-decoration: line-through;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.done .check-btn {
+  color: #07b607;
+}
+
+.remove {
+  -webkit-animation: remove 1s ease;
+          animation: remove 1s ease;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+@-webkit-keyframes remove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10% {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes remove {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10% {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

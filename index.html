@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+      integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>My ToDo List</h1>
+        <h3 class="date">Wednesday, 12 May</h3>
+      </div>
+      <div class="filter">
+        <div class="select">
+          <select class="filter-todo">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">To Be Done</option>
+          </select>
+        </div>
+      </div>
+      <div class="todo">
+        <input class="todo__input" type="text" placeholder="Add a Task" />
+        <button class="add-btn">
+          <i class="add-icon fas fa-plus-circle"></i>
+        </button>
+      </div>
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
+    </div>
+  </body>
+</html>
