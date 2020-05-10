@@ -189,6 +189,7 @@ body {
   margin-bottom: 0.5rem;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+  height: 3.87rem;
 }
 
 .todos li {
@@ -298,12 +299,13 @@ body {
 .remove {
   -webkit-animation: remove 1s ease;
           animation: remove 1s ease;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 @-webkit-keyframes remove {
   0% {
+    height: 2.87rem;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -316,11 +318,13 @@ body {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     opacity: 0;
+    height: 0;
   }
 }
 
 @keyframes remove {
   0% {
+    height: 2.87rem;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -333,6 +337,7 @@ body {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     opacity: 0;
+    height: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

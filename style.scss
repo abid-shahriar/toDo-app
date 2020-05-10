@@ -140,6 +140,7 @@ body {
   overflow: hidden;
   margin-bottom: 0.5rem;
   transition: all 0.5s linear;
+  height: 3.87rem;
 
   //   padding: 1rem;
 
@@ -239,11 +240,12 @@ body {
 
 .remove {
   animation: remove 1s ease;
-  transition: all 0.5s linear;
+  transition: all 0.5s ease;
 }
 
 @keyframes remove {
   0% {
+    height: 2.87rem;
     transform: translateX(0);
   }
 
@@ -255,5 +257,6 @@ body {
   100% {
     transform: translateX(100%);
     opacity: 0;
+    height: 0;
   }
 }
